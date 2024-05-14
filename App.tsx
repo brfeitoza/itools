@@ -1,29 +1,45 @@
-import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   Text,
-  useColorScheme,
+  StyleSheet,
   View,
 } from 'react-native';
-
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Logo} from './src/components/Logo';
+
+const styles = StyleSheet.create({
+  wrapper: {
+    padding: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  subtitle: {
+    marginTop: 20,
+    color: 'red',
+  },
+});
+
+const Subtitle = () => {
+  return (
+    <Text style={styles.subtitle}>
+      A sua rede de ferramentas favorita está de volta
+    </Text>
+  );
+};
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <SafeAreaView style={Colors.darker}>
       <StatusBar barStyle="dark-content" backgroundColor={Colors.darker} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={Colors.darker}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Text>iTools</Text>
+        <View style={styles.wrapper}>
+          <Logo />
+          <Subtitle />
         </View>
       </ScrollView>
     </SafeAreaView>
