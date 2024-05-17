@@ -1,5 +1,5 @@
 import {DefaultTheme, PaperProvider} from 'react-native-paper';
-import {SignUp} from './screens/SignUp/SignUp';
+import {Details} from './screens/Details/Details';
 
 const theme = {
   ...DefaultTheme,
@@ -14,7 +14,7 @@ const theme = {
 export const App = () => {
   return (
     <PaperProvider theme={theme}>
-      <SignUp />
+      <Details />
     </PaperProvider>
   );
 };
