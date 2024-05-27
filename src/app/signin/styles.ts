@@ -1,4 +1,4 @@
-import { Button, Divider } from 'react-native-paper';
+import { Button, Divider, TextInput } from 'react-native-paper';
 import styled from 'styled-components/native';
 
 export const Wrapper = styled.View`
@@ -26,6 +26,14 @@ export const FormWrapper = styled.View`
   gap: 10px;
 `;
 
+export const TextField = styled(TextInput)`
+  width: 100%;
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 48px;
+`;
+
 export const SignUpButton = styled(Button)`
   border-radius: 50px;
   padding-left: 15px;
@@ -48,7 +56,7 @@ export const SignInWithGoogleButton = styled(Button)`
   border-color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const AlreadyRegisteredWrapper = styled.View`
+export const NotRegisteredWrapper = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,7 +75,7 @@ export const DividerText = styled.Text`
   text-align: center;
   margin-top: -10px;
   background: white;
-  width: 200px;
+  width: 180px;
   align-self: center;
   color: ${({ theme }) => theme.colors.primary};
 `;

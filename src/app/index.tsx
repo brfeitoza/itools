@@ -1,25 +1,16 @@
-import { Link } from 'expo-router';
-import { View } from 'react-native';
-import { theme } from '../config/theme';
+import { Redirect } from 'expo-router';
+import { useAuth } from './hooks/useAuth';
 
 if (__DEV__) {
   require('../config/ReactotronConfig');
 }
 
 export default function Home() {
-  return (
-    <View
-      style={{
-        backgroundColor: theme.colors.white,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-      }}
-    >
-      <Link href="/signin">Sign In</Link>
-      <Link href="/signup">Sign Up</Link>
-      <Link href="/home">Home</Link>
-    </View>
-  );
+  const { user } = useAuth();
+
+  if (!user) {
+    return <Redirect href="/signin" />;
+  } else {
+    return <Redirect href="/home" />;
+  }
 }
