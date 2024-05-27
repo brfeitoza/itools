@@ -11,6 +11,10 @@ export default function Layout() {
       <Stack.Screen name="signin/index" />
       <Stack.Screen name="signup/index" />
       <Stack.Screen name="home/index" />
+      <Stack.Screen name="cart/index" />
+      <Stack.Screen name="delivery/index" />
+      <Stack.Screen name="orders/index" />
+
     </Stack>
   );
 }

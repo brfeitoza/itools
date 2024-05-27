@@ -23,6 +23,10 @@ export default function Home() {
       <Link href="/signin">Sign In</Link>
       <Link href="/signup">Sign Up</Link>
       <Link href="/home">Home</Link>
+      <Link href="/cart">Cart</Link>
+      <Link href="/delivery">Home</Link>
+      <Link href="/orders">Cart</Link>
+
     </View>
   );
 }
