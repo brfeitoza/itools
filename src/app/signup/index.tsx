@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Text } from "react-native";
-import { DefaultTheme } from "react-native-paper";
 import { Logo } from "../../components/Logo";
 import {
   AlreadyRegisteredWrapper,
@@ -14,16 +13,7 @@ import {
   TextField,
   Wrapper,
 } from "./styles";
-
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: "#FF0F00",
-    secondary: "yellow",
-    gray: "#909090",
-  },
-};
+import { theme } from "@/src/config/theme";
 
 const RoundedOutlineInput = (props: any) => {
   const outlineStyle = {
@@ -77,7 +67,7 @@ export default function SignUp() {
         <SignInWithGoogleButton
           mode="outlined"
           onPress={() => console.log("Pressed")}
-          textColor="#FF0F00"
+          textColor={theme.colors.primary}
         >
           Entre com o Google
         </SignInWithGoogleButton>

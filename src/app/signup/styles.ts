@@ -9,7 +9,7 @@ export const Wrapper = styled.View`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Subtitle = styled.Text`
@@ -42,7 +42,7 @@ export const SignUpButton = styled(Button)`
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  background-color: #ff0f00;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const SignInWithGoogleButton = styled(Button)`
@@ -53,7 +53,7 @@ export const SignInWithGoogleButton = styled(Button)`
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  border-color: #ff0f00;
+  border-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const AlreadyRegisteredWrapper = styled.View`
@@ -68,7 +68,7 @@ export const DividerWrapper = styled.View`
 `;
 
 export const DividerLine = styled(Divider)`
-  background-color: #909090;
+  background-color: ${({ theme }) => theme.colors.gray};
 `;
 
 export const DividerText = styled.Text`
@@ -77,5 +77,5 @@ export const DividerText = styled.Text`
   background: white;
   width: 140px;
   align-self: center;
-  color: #ff0f00;
+  color: ${({ theme }) => theme.colors.primary};
 `;

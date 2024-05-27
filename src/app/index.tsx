@@ -1,19 +1,16 @@
 import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import { theme } from "../config/theme";
 
-const useAuth = () => {
-  return {
-    isAuthenticated: false,
-  };
-};
+if (__DEV__) {
+  require("../config/ReactotronConfig");
+}
 
 export default function Home() {
-  const { isAuthenticated } = useAuth();
-
   return (
     <View
       style={{
-        backgroundColor: "#fff",
+        backgroundColor: theme.colors.white,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
