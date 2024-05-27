@@ -1,9 +1,9 @@
-import { Link } from "expo-router";
-import { View } from "react-native";
-import { theme } from "../config/theme";
+import { Link } from 'expo-router';
+import { View } from 'react-native';
+import { theme } from '../config/theme';
 
 if (__DEV__) {
-  require("../config/ReactotronConfig");
+  require('../config/ReactotronConfig');
 }
 
 export default function Home() {
@@ -11,10 +11,10 @@ export default function Home() {
     <View
       style={{
         backgroundColor: theme.colors.white,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%',
       }}
     >
       <Link href="/signin">Sign In</Link>

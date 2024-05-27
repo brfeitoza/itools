@@ -1,5 +1,5 @@
-import { Button, Divider, TextInput } from "react-native-paper";
-import styled from "styled-components/native";
+import { Button, Divider, TextInput } from 'react-native-paper';
+import styled from 'styled-components/native';
 
 export const Wrapper = styled.View`
   padding-top: 50px;

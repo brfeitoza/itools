@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Text } from "react-native";
-import { Logo } from "../../components/Logo";
+import { useState } from 'react';
+import { Text } from 'react-native';
+import { Logo } from '../../components/Logo';
 import {
   AlreadyRegisteredWrapper,
   DividerLine,
@@ -12,8 +12,8 @@ import {
   Subtitle,
   TextField,
   Wrapper,
-} from "./styles";
-import { theme } from "@/src/config/theme";
+} from './styles';
+import { theme } from '@/src/config/theme';
 
 const RoundedOutlineInput = (props: any) => {
   const outlineStyle = {
@@ -24,9 +24,9 @@ const RoundedOutlineInput = (props: any) => {
 };
 
 export default function SignUp() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <Wrapper>
@@ -55,7 +55,7 @@ export default function SignUp() {
           mode="outlined"
         />
 
-        <SignUpButton mode="contained" onPress={() => console.log("Pressed")}>
+        <SignUpButton mode="contained" onPress={() => console.log('Pressed')}>
           Cadastrar
         </SignUpButton>
 
@@ -66,7 +66,7 @@ export default function SignUp() {
 
         <SignInWithGoogleButton
           mode="outlined"
-          onPress={() => console.log("Pressed")}
+          onPress={() => console.log('Pressed')}
           textColor={theme.colors.primary}
         >
           Entre com o Google

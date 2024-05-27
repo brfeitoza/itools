@@ -1,7 +1,7 @@
-import { Stack } from "expo-router";
-import { ThemeProvider } from "react-native-paper";
-import { ThemeProvider as StyledComponentsThemeProvider } from "styled-components/native";
-import { theme } from "../config/theme";
+import { Stack } from 'expo-router';
+import { ThemeProvider } from 'react-native-paper';
+import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components/native';
+import { theme } from '../config/theme';
 
 export default function Layout() {
   return (

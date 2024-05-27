@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import { Image } from "react-native";
+import styled from 'styled-components/native';
+import { Image } from 'react-native';
 
 export const Wrapper = styled.View``;
 
