@@ -1,14 +1,13 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { Link, Redirect } from 'expo-router';
+import { useAuth } from './hooks/useAuth';
+import { View } from 'react-native';
 
-const useAuth = () => {
-  return {
-    isAuthenticated: false,
-  };
-};
+if (__DEV__) {
+  require('../config/ReactotronConfig');
+}
 
 export default function Home() {
-  const { isAuthenticated } = useAuth();
+  const { user } = useAuth();
 
   return (
     <View
@@ -24,9 +23,14 @@ export default function Home() {
       <Link href="/signup">Sign Up</Link>
       <Link href="/home">Home</Link>
       <Link href="/cart">Cart</Link>
-      <Link href="/delivery">Home</Link>
-      <Link href="/orders">Cart</Link>
+      <Link href="/delivery">Delivery</Link>
+      <Link href="/orders">Orders</Link>
 
     </View>
   );
+  if (!user) {
+    return <Redirect href="/signin" />;
+  } else {
+    return <Redirect href="/home" />;
+  }
 }

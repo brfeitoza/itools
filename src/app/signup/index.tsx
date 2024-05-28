@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { Text } from "react-native";
-import { DefaultTheme } from "react-native-paper";
-import { Logo } from "../../components/Logo";
+import { useState } from 'react';
+import { Text } from 'react-native';
+import { Logo } from '../../components/Logo';
 import {
   AlreadyRegisteredWrapper,
   DividerLine,
@@ -11,32 +10,24 @@ import {
   SignInWithGoogleButton,
   SignUpButton,
   Subtitle,
-  TextField,
   Wrapper,
-} from "./styles";
-
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: "#FF0F00",
-    secondary: "yellow",
-    gray: "#909090",
-  },
-};
-
-const RoundedOutlineInput = (props: any) => {
-  const outlineStyle = {
-    borderRadius: 50,
-  };
-
-  return <TextField {...props} outlineStyle={outlineStyle} />;
-};
+} from './styles';
+import { theme } from '@/src/config/theme';
+import { RoundedOutlineInput } from '@/src/components/RoundedOutlineInput';
+import { useAuth } from '../hooks/useAuth';
+import { Link, router } from 'expo-router';
 
 export default function SignUp() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const { signUp } = useAuth();
+
+  const handleSignUp = () => {
+    signUp('test user');
+    router.replace('/home');
+  };
 
   return (
     <Wrapper>
@@ -65,26 +56,30 @@ export default function SignUp() {
           mode="outlined"
         />
 
-        <SignUpButton mode="contained" onPress={() => console.log("Pressed")}>
+        <SignUpButton mode="contained" onPress={handleSignUp}>
           Cadastrar
         </SignUpButton>
 
         <DividerWrapper>
           <DividerLine />
-          <DividerText>ou entre com</DividerText>
+          <DividerText>ou cadastre com o Google</DividerText>
         </DividerWrapper>
 
         <SignInWithGoogleButton
           mode="outlined"
-          onPress={() => console.log("Pressed")}
-          textColor="#FF0F00"
+          onPress={handleSignUp}
+          textColor={theme.colors.primary}
         >
-          Entre com o Google
+          Cadastrar com o Google
         </SignInWithGoogleButton>
 
         <AlreadyRegisteredWrapper>
-          <Text style={{ color: theme.colors.gray }}>Já tem uma conta? </Text>
-          <Text style={{ color: theme.colors.primary }}>Entre</Text>
+          <Text style={{ color: theme.colors.gray }}>
+            Já possui uma conta?{' '}
+          </Text>
+          <Link style={{ color: theme.colors.primary }} href="/signin">
+            Entre
+          </Link>
         </AlreadyRegisteredWrapper>
       </FormWrapper>
     </Wrapper>

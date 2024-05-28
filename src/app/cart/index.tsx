@@ -3,23 +3,32 @@ import {
   StyleSheet,
   Text,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import ItemList from "../../components/ItemList/ItemList";
 import { ActionBar } from "../../components/ActionBar/ActionBar";
 import { SignedInWrapper } from '@/src/components/SignedInWrapper/SignedInWrapper';
 
-export default function Cart() {  return (
+export default function Cart() {
+  return (
     <SafeAreaView style={styles.container}>
+      <ScrollView>
+
         <SignedInWrapper>
           <Text style={styles.title} >Meu Carrinho</Text>
         </SignedInWrapper>
+
         <ItemList />
-        <Text style={[styles.subTitle, styles.subRight]}>
+
+
+
+      </ScrollView>
+      <Text style={[styles.subTitle, styles.subRight]}>
           {`
-          Valor produtos: R$ 79,92 o dia
-          Frete: R$ 10,00
-          Valor total: R$ 89,92`}
-      </Text>
+              Valor produtos: R$ 79,92 o dia
+              Frete: R$ 10,00
+              Valor total: R$ 89,92`}
+        </Text>
       <ActionBar></ActionBar>
     </SafeAreaView>
   )

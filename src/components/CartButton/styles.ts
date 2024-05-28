@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const ItemsCountWrapper = styled.View`
-  background: #d9d9d9;
+  background: ${({ theme }) => theme.colors.lightGray};
   border-radius: 50px;
   height: 15px;
   width: 15px;
@@ -11,7 +11,7 @@ export const ItemsCountWrapper = styled.View`
 `;
 
 export const ItemsCount = styled.Text`
-  color: #ff0f00;
+  color: ${({ theme }) => theme.colors.primary};
   text-align: center;
   line-height: 15px;
   font-weight: 500;

@@ -1,6 +1,6 @@
-import { LogoSmall } from "../LogoSmall";
-import { Banner, Toolbar, Wrapper } from "./styles";
-import { CartButton } from "../CartButton/CartButton";
+import { LogoSmall } from '../LogoSmall';
+import { Banner, Toolbar, Wrapper } from './styles';
+import { CartButton } from '../CartButton/CartButton';
 
 type SignedInWrapperProps = {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export const SignedInWrapper = ({ children }: SignedInWrapperProps) => {
         <CartButton />
       </Toolbar>
 
-      <Banner source={require("../../assets/banner.png")} />
+      <Banner source={require('../../assets/banner.png')} />
 
       {children}
     </Wrapper>

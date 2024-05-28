@@ -1,12 +1,12 @@
 import styled from 'styled-components/native';
-import {Image} from 'react-native';
+import { Image } from 'react-native';
 
 export const Wrapper = styled.View``;
 
 export const Toolbar = styled.View`
   height: 70px;
   width: 100%;
-  background: #ff0f00;
+  background: ${({ theme }) => theme.colors.primary};
 
   display: flex;
   flex-direction: row;
