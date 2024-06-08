@@ -24,7 +24,7 @@ export default function SignIn() {
   const { signIn } = useAuth();
 
   const handleSignIn = () => {
-    signIn('test user');
+    signIn("test user");
   };
 
   return (

@@ -2,5 +2,5 @@ pre-commit:
   parallel: true
 
   commands:
-    frontend-linter:
+    linter:
       run: npm run lint
