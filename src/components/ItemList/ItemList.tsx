@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View, Text, Image, ScrollView } from 'react-native';
+import { FlatList, StyleSheet, View, Text, Image } from 'react-native';
 
 const DATA = [
   {
@@ -23,32 +23,28 @@ const DATA = [
   },
 ];
 
-type ItemProps = {title: string, urlImage: any};
+type ItemProps = { title: string; urlImage: any };
 
-export const Item = ({title, urlImage}: ItemProps) => (
+export const Item = ({ title, urlImage }: ItemProps) => (
   <View style={styles.item}>
-      <Image
-        style={styles.stretch}
-        source={urlImage}
-      />
+    <Image style={styles.stretch} source={urlImage} />
     <Text style={styles.title}>{title}</Text>
-
   </View>
-
 );
 
 const ItemList: React.FC = () => {
   return (
-      <FlatList
-        data={DATA}
-        nestedScrollEnabled={true}
-        scrollEnabled={false}
-        renderItem={({ item }) => <Item title={item.title} urlImage={item.urlImage} />}
-        keyExtractor={item => item.id}
-      />
+    <FlatList
+      data={DATA}
+      nestedScrollEnabled={true}
+      scrollEnabled={false}
+      renderItem={({ item }) => (
+        <Item title={item.title} urlImage={item.urlImage} />
+      )}
+      keyExtractor={(item) => item.id}
+    />
   );
 };
-
 
 const styles = StyleSheet.create({
   item: {
@@ -58,7 +54,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row', // Alinha itens na mesma linha
     backgroundColor: '#F3F3F3',
     alignItems: 'center',
-  
   },
   title: {
     fontSize: 20,
@@ -73,4 +68,3 @@ const styles = StyleSheet.create({
   },
 });
 export default ItemList;
-  

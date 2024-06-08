@@ -14,7 +14,7 @@ import {
 } from './styles';
 import { theme } from '@/src/config/theme';
 import { RoundedOutlineInput } from '@/src/components/RoundedOutlineInput';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 import { Link, router } from 'expo-router';
 
 export default function SignUp() {

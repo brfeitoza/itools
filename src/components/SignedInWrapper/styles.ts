@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { Image } from 'react-native';
 
 export const Wrapper = styled.View``;
 
@@ -15,7 +14,7 @@ export const Toolbar = styled.View`
   padding: 20px 40px;
 `;
 
-export const Banner = styled(Image)`
+export const Banner = styled.Image`
   width: 100%;
   height: 150px;
 `;
