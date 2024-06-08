@@ -14,7 +14,7 @@ import {
 } from './styles';
 import { theme } from '@/src/config/theme';
 import { RoundedOutlineInput } from '@/src/components/RoundedOutlineInput';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 import { Link } from 'expo-router';
 
 export default function SignIn() {
@@ -24,7 +24,7 @@ export default function SignIn() {
   const { signIn } = useAuth();
 
   const handleSignIn = () => {
-    signIn('test user');
+    signIn("test user");
   };
 
   return (
