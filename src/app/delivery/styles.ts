@@ -22,7 +22,6 @@ export const DeliveryInfo = styled.View`
 export const ViewMap = styled.View`
     flex-direction: row;
     padding-top: 30px;
-
 `;
 export const ViewValor = styled.View`
     padding-bottom: 30px;

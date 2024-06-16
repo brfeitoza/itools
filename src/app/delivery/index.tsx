@@ -35,13 +35,13 @@ export default function Delivery() {  return (
           <TitleTrasnp>
               Empresa de transporte
           </TitleTrasnp>
-          <ViewMap style={{ backgroundColor: "#F3F3F3" }}>
+          <ViewMap style={{ backgroundColor: "#F3F3F3", marginBottom: 30 }}>
             
             <TitleEmpresa>
               <TextEmpresa variant="titleLarge">99Entrega</TextEmpresa>
             </TitleEmpresa>
             
-            <ViewValor>       
+            <ViewValor >
               <TextValor variant="labelLarge">Valor: 13,20</TextValor>
               <TextValor variant="labelLarge">Valor com entrega: 17,87</TextValor>
             </ViewValor>
