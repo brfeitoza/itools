@@ -1,93 +1,83 @@
-import { SafeAreaView } from "react-native";
-import { Text } from "react-native-paper";
-import styled from "styled-components/native";
-import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { SafeAreaView } from 'react-native';
+import { Text } from 'react-native-paper';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
-    padding-left: 28px;
-    padding-right: 28px;
-
-`;    
-const statusBarHeight = getStatusBarHeight();
+  padding-left: 28px;
+  padding-right: 28px;
+`;
 
 export const Content = styled(SafeAreaView)`
-    background-color: #ffff;
-    flex: 1;
-    margin-top: ${statusBarHeight}px;`;
-
-
-export const DeliveryInfo = styled.View`
-
+  background-color: #ffff;
+  flex: 1;
 `;
+
+export const DeliveryInfo = styled.View``;
 export const ViewMap = styled.View`
-    flex-direction: row;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 20px;
+  flex-direction: row;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 20px;
 `;
 export const ViewValor = styled.View`
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 `;
-    
+
 export const TextValor = styled(Text)`
-    text-align:right;
+  text-align: right;
 `;
 
 export const Divider = styled.View`
-    margin-bottom: 50px;
-    height: 40px;
-    background-color: black;
-    color: #ffff;
-    flex-direction: row;
-    padding-top: 7px;
-    padding-left: 20px;
+  margin-bottom: 50px;
+  height: 40px;
+  background-color: black;
+  color: #ffff;
+  flex-direction: row;
+  padding-top: 7px;
+  padding-left: 20px;
 `;
 export const Title = styled.Text`
-    font-size: 20px;
-    color: #FF0F00;
-    font-weight: bold;
-    margin-top: 30px;
-    padding-left: 28px;
+  font-size: 20px;
+  color: #ff0f00;
+  font-weight: bold;
+  margin-top: 30px;
+  padding-left: 28px;
 `;
 export const TitleTrasnp = styled.Text`
-    font-size: 20px;
-    color: #FF0F00;
-    font-weight: bold;
-    margin-top: 80px;
-
+  font-size: 20px;
+  color: #ff0f00;
+  font-weight: bold;
+  margin-top: 80px;
 `;
 export const ImgMap = styled.Image`
-    width: 50px;
-    height: 55px;
-    margin-top: 8px;
-    margin-right: 24px;
-    border-radius: 10px;
+  width: 50px;
+  height: 55px;
+  margin-top: 8px;
+  margin-right: 24px;
+  border-radius: 10px;
 `;
 
 export const TitleEmpresa = styled.View`
-    margin-left: 20px;
-    width: 250px;
-    border-radius: 10px;
-
+  margin-left: 20px;
+  width: 250px;
+  border-radius: 10px;
 `;
 export const TextEmpresa = styled(Text)`
-    font-weight: bold;
-    color: #000;
-    padding-top: 10px;
+  font-weight: bold;
+  color: #000;
+  padding-top: 10px;
 `;
 
 export const LabelCinza = styled(Text)`
-    color: #ccc;
-
+  color: #ccc;
 `;
 export const LabelBranca = styled(Text)`
-    color: #ffff;
-
+  color: #ffff;
 `;
 export const LabelLaranja = styled(Text)`
-    color: #FF0F00;
-    font-weight: bold;
+  color: #ff0f00;
+  font-weight: bold;
 `;
-export const LabelPreta= styled(Text)`
-    color: #000;
+export const LabelPreta = styled(Text)`
+  color: #000;
 `;
