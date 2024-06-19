@@ -1,25 +1,27 @@
 import { LogoSmall } from '../LogoSmall';
-import { Banner, Toolbar, Wrapper } from './styles';
+import { Banner, Toolbar } from './styles';
 import { CartButton } from '../CartButton/CartButton';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaWrapper } from '../SafeAreaWrapper';
+import { router } from 'expo-router';
+import { TouchableOpacity } from 'react-native';
 
 type SignedInWrapperProps = {
   children: React.ReactNode;
 };
 
 export const SignedInWrapper = ({ children }: SignedInWrapperProps) => {
-  const insets = useSafeAreaInsets();
-
   return (
-    <Wrapper style={{ paddingTop: insets.top }}>
+    <SafeAreaWrapper>
       <Toolbar>
-        <LogoSmall />
-        <CartButton />
+        <TouchableOpacity onPress={() => router.replace('/home')}>
+          <LogoSmall />
+        </TouchableOpacity>
+        <CartButton itemsCount={0} onPress={() => router.replace('/cart')} />
       </Toolbar>
 
       <Banner source={require('../../assets/banner.png')} />
 
       {children}
-    </Wrapper>
+    </SafeAreaWrapper>
   );
 };

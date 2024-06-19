@@ -63,7 +63,7 @@ export default function Delivery() {
         </Container>
       </ScrollView>
 
-      <ActionBar></ActionBar>
+      <ActionBar />
     </Content>
   );
 }

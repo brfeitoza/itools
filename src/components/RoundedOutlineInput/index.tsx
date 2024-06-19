@@ -1,4 +1,4 @@
-import { TextInput } from 'react-native-paper';
+import { TextInput, TextInputProps } from 'react-native-paper';
 import styled from 'styled-components/native';
 
 const TextField = styled(TextInput)`
@@ -9,7 +9,7 @@ const TextField = styled(TextInput)`
   height: 48px;
 `;
 
-export const RoundedOutlineInput = (props: any) => {
+export const RoundedOutlineInput = (props: Omit<TextInputProps, 'ref'>) => {
   const outlineStyle = {
     borderRadius: 50,
   };

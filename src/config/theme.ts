@@ -5,8 +5,10 @@ export type Colors = {
   primary: string;
   secondary: string;
   lightGray: string;
+  lighterGray: string;
   gray: string;
   white: string;
+  black: string;
 };
 
 export type Theme = DefaultThemeType & {
@@ -19,8 +21,10 @@ export const theme: Theme = {
     ...DefaultTheme.colors,
     primary: '#ff0f00',
     secondary: 'yellow',
+    lighterGray: '#f3f3f3',
     lightGray: '#d9d9d9',
     gray: '#909090',
     white: '#ffffff',
+    black: '#000000',
   },
 };

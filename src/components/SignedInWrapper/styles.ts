@@ -1,7 +1,5 @@
 import styled from 'styled-components/native';
 
-export const Wrapper = styled.View``;
-
 export const Toolbar = styled.View`
   height: 70px;
   width: 100%;

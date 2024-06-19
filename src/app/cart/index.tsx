@@ -1,17 +1,11 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  StatusBar,
-  ScrollView,
-} from 'react-native';
+import { StyleSheet, Text, StatusBar, ScrollView, View } from 'react-native';
 import ItemList from '../../components/ItemList/ItemList';
 import { ActionBar } from '../../components/ActionBar/ActionBar';
 import { SignedInWrapper } from '@/src/components/SignedInWrapper/SignedInWrapper';
 
 export default function Cart() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ScrollView>
         <SignedInWrapper>
           <Text style={styles.title}>Meu Carrinho</Text>
@@ -23,10 +17,11 @@ export default function Cart() {
         {`
               Valor produtos: R$ 79,92 o dia
               Frete: R$ 10,00
-              Valor total: R$ 89,92`}
+              Valor total: R$ 89,92
+        `}
       </Text>
-      <ActionBar></ActionBar>
-    </SafeAreaView>
+      <ActionBar />
+    </View>
   );
 }
 
@@ -40,7 +35,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#FF0F00',
     fontWeight: 'bold',
-    marginLeft: 20, // Margem direita zero
+    marginLeft: 20,
     marginTop: 20,
     marginBottom: 20,
   },

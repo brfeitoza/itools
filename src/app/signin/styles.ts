@@ -1,7 +1,8 @@
+import { SafeAreaWrapper } from '@/src/components/SafeAreaWrapper';
 import { Button, Divider, TextInput } from 'react-native-paper';
 import styled from 'styled-components/native';
 
-export const Wrapper = styled.View`
+export const Wrapper = styled(SafeAreaWrapper)`
   padding-top: 50px;
   padding-bottom: 60px;
   padding-left: 40px;
@@ -10,6 +11,7 @@ export const Wrapper = styled.View`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.white};
+  height: 100%;
 `;
 
 export const Subtitle = styled.Text`

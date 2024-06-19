@@ -7,5 +7,7 @@ module.exports = {
   plugins: ['prettier', '@tanstack/query'],
   rules: {
     'prettier/prettier': ['error', { singleQuote: true }],
+    '@typescript-eslint/no-explicit-any': 'error',
+    'no-console': 'error',
   },
 };

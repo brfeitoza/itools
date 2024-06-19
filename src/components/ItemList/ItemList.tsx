@@ -1,29 +1,36 @@
-import { FlatList, StyleSheet, View, Text, Image } from 'react-native';
+import {
+  FlatList,
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Betoneira',
+    name: 'Betoneira',
     urlImage: require('../../assets/betoneira.png'),
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Caixa de Ferramentas',
+    name: 'Caixa de Ferramentas',
     urlImage: require('../../assets/caixa.png'),
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Furadeira',
+    name: 'Furadeira',
     urlImage: require('../../assets/furadeira.png'),
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d90',
-    title: 'Serra Circular',
+    name: 'Serra Circular',
     urlImage: require('../../assets/makita.png'),
   },
 ];
 
-type ItemProps = { title: string; urlImage: any };
+type ItemProps = { title: string; urlImage: ImageSourcePropType };
 
 export const Item = ({ title, urlImage }: ItemProps) => (
   <View style={styles.item}>
@@ -39,7 +46,7 @@ const ItemList: React.FC = () => {
       nestedScrollEnabled={true}
       scrollEnabled={false}
       renderItem={({ item }) => (
-        <Item title={item.title} urlImage={item.urlImage} />
+        <Item title={item.name} urlImage={item.urlImage} />
       )}
       keyExtractor={(item) => item.id}
     />
