@@ -1,4 +1,4 @@
-import { SafeAreaView, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Text } from 'react-native-paper';
 import styled from 'styled-components/native';
 
@@ -7,15 +7,10 @@ export const Container = styled.View`
   padding-right: 28px;
 `;
 
-const statusBarHeight = StatusBar.currentHeight;
-
 export const Content = styled(SafeAreaView)`
   background-color: #ffff;
   flex: 1;
-  margin-top: ${statusBarHeight}px;
 `;
-
-export const DeliveryInfo = styled.View``;
 export const ViewMap = styled.View`
   flex-direction: row;
   padding-top: 30px;

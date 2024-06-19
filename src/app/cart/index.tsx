@@ -1,4 +1,4 @@
-import { StyleSheet, Text, StatusBar, ScrollView, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, View } from 'react-native';
 import ItemList from '../../components/ItemList/ItemList';
 import { ActionBar } from '../../components/ActionBar/ActionBar';
 import { SignedInWrapper } from '@/src/components/SignedInWrapper/SignedInWrapper';
@@ -13,7 +13,7 @@ export default function Cart() {
 
         <ItemList />
       </ScrollView>
-      <Text style={[styles.subTitle, styles.subRight]}>
+      <Text style={[styles.subTitle, styles.subRight, styles.resumeCart]}>
         {`
               Valor produtos: R$ 79,92 o dia
               Frete: R$ 10,00
@@ -28,7 +28,6 @@ export default function Cart() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
     backgroundColor: '#ffff',
   },
   title: {
@@ -46,5 +45,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#FF0F00',
     fontWeight: 'bold',
+  },
+  resumeCart: {
+    marginBottom: 20,
   },
 });

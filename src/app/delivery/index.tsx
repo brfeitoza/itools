@@ -1,4 +1,4 @@
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { ActionBar } from '../../components/ActionBar/ActionBar';
 import { SignedInWrapper } from '@/src/components/SignedInWrapper/SignedInWrapper';
@@ -11,7 +11,6 @@ import {
   LabelPreta,
   Divider,
   Content,
-  DeliveryInfo,
   TitleTrasnp,
   TitleEmpresa,
   TextEmpresa,
@@ -45,9 +44,9 @@ export default function Delivery() {
           </LabelCinza>
           <LabelPreta variant="titleMedium">Hoje - 55 - 65 min</LabelPreta>
           <LabelCinza variant="labelLarge">Entrega: R$ 4,67</LabelCinza>
-          <DeliveryInfo>
+          <View>
             <TitleTrasnp>Empresa de transporte</TitleTrasnp>
-            <ViewMap style={{ backgroundColor: '#F3F3F3' }}>
+            <ViewMap style={{ backgroundColor: '#F3F3F3', marginBottom: 30 }}>
               <TitleEmpresa>
                 <TextEmpresa variant="titleLarge">99Entrega</TextEmpresa>
               </TitleEmpresa>
@@ -59,7 +58,7 @@ export default function Delivery() {
                 </TextValor>
               </ViewValor>
             </ViewMap>
-          </DeliveryInfo>
+          </View>
         </Container>
       </ScrollView>
 

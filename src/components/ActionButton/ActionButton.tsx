@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 50,
     padding: 10,
-    marginTop: 24,
+    marginTop: 16,
     position: 'absolute',
     right: 28,
     backgroundColor: '#FF0F00',

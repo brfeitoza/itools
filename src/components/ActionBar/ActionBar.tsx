@@ -13,14 +13,15 @@ export const ActionBar = () => {
 const styles = StyleSheet.create({
   labelAction: {
     fontSize: 15,
-    color: '#FF0F00',
+    color: '#FFFF',
     fontWeight: 'bold',
-    marginTop: 16,
+    marginTop: 20,
     marginLeft: 20,
   },
   viewBar: {
     flexDirection: 'row',
-    height: 100,
-    padding: 20,
+    height: 80,
+    padding: 10,
+    backgroundColor: '#232222',
   },
 });
