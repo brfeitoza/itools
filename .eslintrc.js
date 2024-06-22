@@ -9,5 +9,17 @@ module.exports = {
     'prettier/prettier': ['error', { singleQuote: true }],
     '@typescript-eslint/no-explicit-any': 'error',
     'no-console': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'react-native',
+            importNames: ['StyleSheet'],
+            message: 'Please use styled-components instead.',
+          },
+        ],
+      },
+    ],
   },
 };

@@ -1,77 +1,40 @@
-import {
-  FlatList,
-  Image,
-  ImageSourcePropType,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { useCart } from '@/src/hooks/useCart';
+import { FlatList } from 'react-native';
+import { ItemImage, ItemTitle, ItemWrapper } from './styles';
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    name: 'Betoneira',
-    urlImage: require('../../assets/betoneira.png'),
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    name: 'Caixa de Ferramentas',
-    urlImage: require('../../assets/caixa.png'),
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    name: 'Furadeira',
-    urlImage: require('../../assets/furadeira.png'),
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d90',
-    name: 'Serra Circular',
-    urlImage: require('../../assets/makita.png'),
-  },
-];
+type ItemProps = { title: string; removeFromCart: () => void };
 
-type ItemProps = { title: string; urlImage: ImageSourcePropType };
-
-export const Item = ({ title, urlImage }: ItemProps) => (
-  <View style={styles.item}>
-    <Image style={styles.stretch} source={urlImage} />
-    <Text style={styles.title}>{title}</Text>
-  </View>
+export const Item = ({ title, removeFromCart }: ItemProps) => (
+  <ItemWrapper onPress={removeFromCart}>
+    <ItemImage
+      resizeMode="stretch"
+      source={require('../../assets/betoneira.png')}
+    />
+    <ItemTitle>{title}</ItemTitle>
+  </ItemWrapper>
 );
 
-const ItemList: React.FC = () => {
+const ItemList = () => {
+  const { cart, removeFromCart } = useCart();
+
   return (
     <FlatList
-      data={DATA}
+      data={cart}
       nestedScrollEnabled={true}
       scrollEnabled={false}
+      contentContainerStyle={{
+        paddingVertical: 20,
+        gap: 20,
+      }}
       renderItem={({ item }) => (
-        <Item title={item.name} urlImage={item.urlImage} />
+        <Item
+          title={item.name}
+          removeFromCart={() => removeFromCart(item.id)}
+        />
       )}
       keyExtractor={(item) => item.id}
     />
   );
 };
 
-const styles = StyleSheet.create({
-  item: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    flexDirection: 'row', // Alinha itens na mesma linha
-    backgroundColor: '#F3F3F3',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 20,
-    color: '#FF0F00',
-    fontWeight: 'bold',
-    marginLeft: 150, // Margem direita zero
-  },
-  stretch: {
-    width: 60,
-    height: 60,
-    resizeMode: 'stretch',
-  },
-});
 export default ItemList;

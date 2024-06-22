@@ -1,26 +1,32 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { useCart } from '@/src/hooks/useCart';
+import { useFinishOrderMutation } from '@/src/services/ordersApi';
+import { router } from 'expo-router';
+import { ButtonText, ButtonWrapper } from './styles';
 
 export const ActionButton = () => {
+  const { cart, clearCart } = useCart();
+  const { mutate: finshOrder } = useFinishOrderMutation();
+
+  const handleFinishOrder = () => {
+    const products = cart.map((product) => product.id);
+
+    finshOrder({
+      products,
+      status: 'pending',
+      expectedDelivery: new Date(),
+      deliveryAddress: 'Rua 123, nº 123',
+      expectedReturn: new Date(),
+      returnAddress: 'Rua 123, nº 123',
+    });
+
+    clearCart();
+
+    router.replace('/home');
+  };
+
   return (
-    <TouchableOpacity style={styles.actButton}>
-      <Text style={styles.buttonText}>Entrega</Text>
-    </TouchableOpacity>
+    <ButtonWrapper>
+      <ButtonText onPress={handleFinishOrder}>Finalizar</ButtonText>
+    </ButtonWrapper>
   );
 };
-const styles = StyleSheet.create({
-  actButton: {
-    width: 150,
-    height: 50,
-    padding: 10,
-    marginTop: 16,
-    position: 'absolute',
-    right: 28,
-    backgroundColor: '#FF0F00',
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  buttonText: {
-    fontSize: 20,
-    color: '#ffff',
-  },
-});

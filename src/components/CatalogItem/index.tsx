@@ -1,4 +1,4 @@
-import { ImageSourcePropType } from 'react-native';
+import { ImageSourcePropType, TouchableOpacityProps } from 'react-native';
 import {
   CatalogImage,
   ImageWrapper,
@@ -14,10 +14,10 @@ type ItemProps = {
   name: string;
   price: number;
   urlImage: ImageSourcePropType | undefined;
-};
+} & TouchableOpacityProps;
 
-export const CatalogItem = ({ name, price, urlImage }: ItemProps) => (
-  <Wrapper>
+export const CatalogItem = ({ name, price, urlImage, ...props }: ItemProps) => (
+  <Wrapper {...props}>
     <ImageWrapper>
       <CatalogImage resizeMode="stretch" source={urlImage} />
     </ImageWrapper>

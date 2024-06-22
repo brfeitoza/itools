@@ -1,11 +1,14 @@
 import { CatalogItem } from '@/src/components/CatalogItem';
 import { SignedInWrapper } from '@/src/components/SignedInWrapper/SignedInWrapper';
-import { useGetAllProductsQuery } from '@/src/services/products';
 import { FlatList, Text } from 'react-native';
 import { Wrapper } from './styles';
+import { useCart } from '@/src/hooks/useCart';
+import { useGetAllProductsQuery } from '@/src/services/catalogApi';
 
 export default function Home() {
   const { data, error } = useGetAllProductsQuery();
+
+  const { addToCart } = useCart();
 
   if (error) return <Text>Error</Text>;
 
@@ -27,6 +30,7 @@ export default function Home() {
               name={item.name}
               price={item.price}
               urlImage={require('../../assets/betoneira.png')}
+              onPress={() => addToCart(item)}
             />
           )}
           keyExtractor={(item) => item.id}

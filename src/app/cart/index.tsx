@@ -1,52 +1,24 @@
-import { StyleSheet, Text, ScrollView, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import ItemList from '../../components/ItemList/ItemList';
 import { ActionBar } from '../../components/ActionBar/ActionBar';
 import { SignedInWrapper } from '@/src/components/SignedInWrapper/SignedInWrapper';
+import { CartDetailsText, CartDetailsWrapper, Title, Wrapper } from './styles';
 
 export default function Cart() {
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        <SignedInWrapper>
-          <Text style={styles.title}>Meu Carrinho</Text>
-        </SignedInWrapper>
-
-        <ItemList />
-      </ScrollView>
-      <Text style={[styles.subTitle, styles.subRight, styles.resumeCart]}>
-        {`
-              Valor produtos: R$ 79,92 o dia
-              Frete: R$ 10,00
-              Valor total: R$ 89,92
-        `}
-      </Text>
+    <SignedInWrapper>
+      <Wrapper>
+        <ScrollView>
+          <Title>Meu Carrinho</Title>
+          <ItemList />
+        </ScrollView>
+        <CartDetailsWrapper>
+          <CartDetailsText>Valor produtos: R$ 79,92 o dia</CartDetailsText>
+          <CartDetailsText>Frete: R$ 10,00</CartDetailsText>
+          <CartDetailsText>Valor total: R$ 89,92</CartDetailsText>
+        </CartDetailsWrapper>
+      </Wrapper>
       <ActionBar />
-    </View>
+    </SignedInWrapper>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffff',
-  },
-  title: {
-    fontSize: 20,
-    color: '#FF0F00',
-    fontWeight: 'bold',
-    marginLeft: 20,
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  subRight: {
-    marginLeft: 120,
-  },
-  subTitle: {
-    fontSize: 15,
-    color: '#FF0F00',
-    fontWeight: 'bold',
-  },
-  resumeCart: {
-    marginBottom: 20,
-  },
-});
